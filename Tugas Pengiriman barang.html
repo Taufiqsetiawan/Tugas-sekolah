@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<ul>
+    <li>
+<script>
+   var pengirim1 = "Nama pengirim :"
+   var pengirim2 = prompt("Masukan Nama Pengirim");
+   document.write(pengirim1);
+   document.write(pengirim2);
+</script>
+    </li>
+</ul>
+
+
+
+<ul>
+    <li>    
+<script>
+var penerima1 = "Nama penerima :"
+   var penerima2 = prompt("Masukan nama penerima");
+   document.write (penerima1);
+   document.write (penerima2);
+</script>
+    </li>
+</ul>
+
+
+
+
+<ul>
+    <li>
+   
+<script>
+var km1 = "Jarak pengiriman : :"
+var km2 = prompt ("Masukkan jarak pengiriman (KM)");
+document.write(km1)
+document.write(km2)
+
+ var jarak_1 = ".....Total harga pengiriman :Rp."
+   var jarak_2 = prompt("Ulangi! (tidak menggunakan satuan kilo (km))")
+   var jrk = (jarak_2*10000)
+   if(jrk>=50000){
+       const ng1 = 0.1
+       var jml = jrk*ng1
+       var hsl = jrk-jml
+        document.write(jarak_1)
+       document.write(hsl)
+   }
+</script>
+
+    </li>
+</ul>
+
+
+<ul>
+    <li>
+<script>
+var alamat1 = "Alamat penerima :"
+var alamat2 = prompt("Masukan Alamat penerima");
+document.write(alamat1);
+document.write(alamat2);
+
+</script>
+    </li>
+</ul>
+
+
+<ul>
+    <li>
+<script>
+    var barang1 = "Jenis Barang :";
+    var barang2 = prompt("Masukan jenis barang!");
+    document.write(barang1)
+    document.write(barang2)
+</script>
+    </li>
+</ul>
+
+
+<ul>
+    <li>
+<script>
+var kg1 = "Berat barang :"
+var kg2 = prompt ("Masukkan berat barang (KG)");
+document.write(kg1)
+document.write(kg2)
+
+   var berat_1 = "...Total harga berat barang adalah :Rp."
+   var berat_2 = prompt("uLANGI! (tidak menggunakan satuan kilo (Kg)")
+   var brt = (berat_2*5000)
+   if(brt>=100000){
+       const ng = 0.05
+       var jmll = brt * ng
+       var hsll = brt-jmll
+       document.write(berat_1)
+       document.write(hsll)
+   }else{
+       document.write(berat_1)
+       document.write(brt)
+   }
+</script>
+    </li>
+</ul>
+
+
+<p>jumlah total pengiriman</p><input type="text">
+    
+
+
+
+</body>
+</html>
