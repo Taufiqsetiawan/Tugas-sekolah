@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function!</title>
+</head>
+<body>
+    
+
+
+                                        <h3>
+
+
+<script>
+
+var bangun_datar = prompt("Masukan bangun datar");
+
+function soal(x, y){
+     var hasil = (x * y)
+     return hasil;
+}
+ if(bangun_datar === "persegi"){
+//Menghitung Luas persegi:
+var persegi = soal(prompt("masukan sisi"), prompt("masukan sisi"));
+ document.write("Hasil luas persegi yang diimput adalah :" + persegi + "cm")
+}
+else if(bangun_datar === "persegi panjang"){
+//Menghitung Luas persegi panjang:
+var persegi_panjang = soal(prompt("masukan panjang(P)"), prompt("masukan Luas(L)"));
+ document.write("Hasil luas persegi panjang yang diimput adalah :" + persegi_panjang + "cm")
+}
+else if(bangun_datar === "lingkaran"){
+//Menghitung Luas Lingkaran:
+function soal_2 (a, b){
+    var hasil_2 = (3.14 * a * b)
+    return hasil_2;
+}
+var lingkaran = soal_2(prompt("diket konstanta adalah 3,14, masukan jari-jari lingkarannya!"), prompt("masukan jari-jari!"));
+ document.write("Hasil luas lingkaran yang diimput adalah :" + lingkaran + "cm")
+}
+else if(bangun_datar === "segitiga"){
+//Menghitung Luas Segitiga:
+function soal_2 (c, d){
+    var hasil_2 = (0.5 * c * d)
+    return hasil_2;
+}
+var segitiga = soal_2(prompt("Masukan alas(a)"), prompt("masukan tinggi(t)"));
+ document.write("Hasil luas lingkaran yang diimput adalah :" + segitiga + "cm")
+}
+
+</script>
+
+
+                                        </h3> 
+
+
+</body>
+</html>
