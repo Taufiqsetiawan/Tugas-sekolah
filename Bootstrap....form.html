@@ -1,0 +1,216 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    
+
+
+    <style>
+        .container{
+            width: 800px;
+        }
+
+    </style>
+
+
+<table width="1500" border="1" style="background-color: grey;"><tr><td colspan="5">Header</td></tr></table>
+
+  </head>
+  <body>
+
+
+    <div class="container">
+        <div class="form-group">
+            <label for="namasiswa">Nama siswa</label>
+            <input type="text" class="form-control" id="txt_namasiswa" >
+          </div>
+
+
+          <label for="kelas">Kelas</label>
+    <select class="form-control" id="txt_kelas">
+
+      <option value="X">X</option>
+      <option value="XI">XI</option>
+      <option value="XII">XII</option>
+    </select>
+
+    <div class="form-group" >
+      <label for="gender">Jenis kelamin</label>
+      <select multiple class="form-control" id="txt_gender" >
+        <option>Laki-laki</option>
+        <option>Perempuan</option>
+      </select>
+    </div>
+ 
+
+    <div >
+      <div class="form-group">
+          <label  for="namasiswa">Tangaal lahir</label>
+          <input type="date" class="form-control" id="txt_tgl" >
+        </div>
+
+    <label for="alamat">Alamat</label>
+    <textarea class="form-control" id="txt_alamat" rows="3"></textarea>
+
+    <button class="btn btn-primary mt=4" type="submit" onclick="awe()" >Simpan</button>
+    
+
+    <table class="table mt-4">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama siswa</th>
+            <th scope="col">Kelas</th>
+            <th scope="col">Jenis kelamin</th>
+            <th scope="col">Tanggal lahir</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tampildata">
+         
+         
+        </tbody>
+      </table>
+
+    </div>
+
+    
+
+
+
+<script >
+    var namasiswa = ['Taufiq']
+    var kelas = ['XI']
+    var gender = ['Laki-laki']
+    var tgl = ['2005-05-19']
+    var alamat = ['Depok']
+
+    var tampil = document.getElementById('tampildata')
+
+    function showData() {
+        tampil.innerHTML = ""
+
+        for(i = 0; i<namasiswa.length; i++){
+            var nodata = i+1
+
+            tampil.innerHTML += "<tr >"+
+            "<th  >"+nodata+"</th>"+
+            "<td >"+namasiswa[i]+"</td>"+
+            "<td>"+kelas[i]+"</td>"+
+            "<td>"+gender[i]+"</td>"+
+            "<td>"+tgl[i]+"</td>"+
+            "<td>"+alamat[i]+"</td>"+
+            "<td>"+
+                "<button class='btn btn-warning' onclick=edit("+i+")>Edit</button>"+
+                "<button class='btn btn-danger' onclick=del("+i+")>Hapus</button>"+
+            "</td>"+
+          "</tr>"
+        
+        }
+    }
+        
+   
+
+    showData() 
+
+
+    function awe() {
+        var namabaru = document.getElementById('txt_namasiswa').value
+        var kelasbaru = document.getElementById('txt_kelas').value
+        var genderbaru = document.getElementById('txt_gender').value
+        var tglbaru = document.getElementById('txt_tgl').value
+        var alamatbaru = document.getElementById('txt_alamat').value
+
+        namasiswa.push(namabaru) 
+        kelas.push(kelasbaru)
+        gender.push(genderbaru)
+        tgl.push(tglbaru)
+        alamat.push(alamatbaru)
+
+
+        showData()
+    }
+
+    
+ //Inputan EDIT & HAPUS
+
+  
+
+ function edit(i) {
+   
+
+  var dit = prompt('Ganti nama dengan benar!', namasiswa[i])
+  namasiswa[i]=dit;
+
+  var dit = prompt('Ganti kelas dengan benar!', kelas[i])
+  kelas[i]=dit;
+
+  var dit = prompt('Ganti jenis kelamin dengan benar!', gender[i])
+  gender[i]=dit;
+
+  var dit = prompt('Ganti tanggal lahir dengan benar!', tgl[i])
+  tgl[i]=dit;
+
+  var dit = prompt('Ganti alamat dengan benar!', alamat[i])
+  alamat[i]=dit;
+
+      alert('Data berhasil diedit!')
+
+  showData()
+   
+ }
+
+
+ showData() 
+
+function del(i) {
+  
+      alert('Data berhasil dihapus!')
+
+ namasiswa.splice(i,1)
+ kelas.splice(i,1)
+ gender.splice(i,1)
+ tgl.splice(i,1)
+ alamat.splice(i,1) 
+   
+
+    showData()
+ }
+
+
+showData()
+
+
+
+
+</script>
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
